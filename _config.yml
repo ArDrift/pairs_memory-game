@@ -1,0 +1,11 @@
+---
+title: Pairs - Memory game
+exclude:
+- ".gitignore"
+- ".jekyll-cache"
+- README.md
+collections:
+  cards:
+    title: Cards
+    output: true    
+---

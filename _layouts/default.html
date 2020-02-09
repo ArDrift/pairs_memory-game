@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>{{ site.title }}</title>
+  </head>
+
+  <body>
+
+    <button id="restart" class="">Restart game</button>
+
+    <h1>{{ site.title }}</h1>
+
+    <label for="deck-size">Deck Size (6-20)<br></label>
+
+    <select id="deck-size">
+      <option value="6">6</option>
+      <option value="8">8</option>
+      <option value="10">10</option>
+      <option value="12">12</option>
+      <option value="14">14</option>
+      <option value="16">16</option>
+      <option value="18">18</option>
+      <option value="20">20</option>
+    </select>
+
+    <button id="set-deck-size" class="" onclick="setDeckSize()">Set deck size</button>
+
+    <div id="card-container" class="cards">
+
+      {% for card in site.cards %}
+
+      <div class="card" onclick="classList.toggle('show-value');pickCard();">
+        <div class="inner-card">
+          <div class="inner-card-front">
+            <p id="cardTitle">
+              {{ card.title }}
+            </p>
+          </div>
+          <div class="inner-card-back">
+            <p id="cardValue">
+              {{ card.value }}
+            </p>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
